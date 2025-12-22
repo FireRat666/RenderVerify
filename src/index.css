@@ -1,0 +1,254 @@
+/* --- Theme & Global Styles --- */
+:root {
+  --background-image: url("https://check.firer.at/FireRat-Transparentv3.webp");
+  color-scheme: dark;
+
+  /* Colors */
+  --color-text: #ffffff;
+  --color-background: #000000;
+  --color-primary: #00e613;
+  --color-primary-dark: #007914;
+  --color-primary-darker: #004a0c;
+  --color-danger: #e60000;
+  --color-danger-dark: #790000;
+  --color-danger-darker: #4a0000;
+  --color-muted: #919191;
+  --color-muted-dark: #6a6a6a;
+  --color-link: #60a5fa;
+  --color-success-text: #00ff00;
+  --color-danger-text: #ef4444;
+  --color-muted-text: #6b7280;
+  --color-warning-bg: #ffff00;
+  --color-warning-text: #000000;
+  --color-code-unused-bg: #007428;
+
+  /* Borders */
+  --border-radius-base: 0.25rem; /* 4px */
+  --border-primary: 1px solid var(--color-primary);
+  --border-muted: 1px solid var(--color-muted);
+  --border-focus: 2px solid var(--color-primary);
+
+  /* Sizing & Spacing (Responsive) */
+  --font-size-body: 1.5rem;
+  --font-size-button: 1.3rem; 
+  --font-size-input: 1.1rem;
+  --margin-body: 0 5%;
+  --inset-body-before: 15%;
+
+  /* Backgrounds */
+  --background-overlay: rgba(0, 0, 0, 0.3);
+  --background-overlay-darker: rgba(0, 0, 0, 0.45);
+  --background-overlay-gradient: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75));
+}
+
+body {
+  font-size: var(--font-size-body);
+  color: var(--color-text);
+  margin: var(--margin-body);
+  padding: 0;
+  height: 100vh;
+  background-color: var(--color-background);
+  position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: var(--inset-body-before); /*rtl:remove*/
+  background-image: var(--background-overlay-gradient), var(--background-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* --- Base Element & Component Styles --- */
+a {
+  color: var(--color-link);
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}
+
+h1, h2, h3 { margin-bottom: 1rem; }
+h4 {
+  margin-bottom: 1rem;
+  font-size: var(--font-size-h4);
+}
+p { margin: 0; }
+ul { list-style: none; padding: 0; margin: 0; }
+
+.card {
+  padding: 1.5rem;
+  margin: 0.5rem 0; /* 8px */
+  border: var(--border-primary);
+  border-radius: 0.5rem;
+  background-color: var(--background-overlay);;
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* --- Forms --- */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+form label {
+  display: block;
+  margin-bottom: 0.25rem;
+  text-align: center;
+}
+
+form input,
+form select,
+form textarea {
+  display: block;
+  margin: 0 auto;
+  width: 90%;
+  padding: 0.75rem 1.25rem; /* 12px 20px */
+  border: var(--border-primary);
+  border-radius: var(--border-radius-base);
+  background-color: var(--background-overlay-darker);
+  color: var(--color-text);
+  font-size: var(--font-size-input);
+  text-align: center;
+}
+form input:focus,
+form select:focus,
+form textarea:focus {
+  border: var(--border-focus);
+  outline: none;
+}
+
+/* --- Buttons --- */
+.button {
+  background-color: transparent;
+  border: 2px solid var(--color-text);
+  color: var(--color-text) !important;
+  padding: 0.25rem; /* 4px */
+  text-align: center;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--font-size-button);
+  margin: 0.25rem 0.125rem; /* 4px 2px */
+  transition: background-color 0.4s, transform 0.1s;
+  cursor: pointer;
+  border-radius: var(--border-radius-base);
+}
+
+/* Button Modifiers */
+.button:active {
+  transform: translateY(0.125rem); /* 2px */
+}
+
+.button.is-primary, .button.is-danger {
+  background-color: var(--color-background);
+}
+.button.is-primary { 
+  border-color: var(--color-primary);
+}
+.button.is-primary:hover { background-color: var(--color-primary-dark); }
+.button.is-primary:active { background-color: var(--color-primary-darker); }
+
+.button.is-danger {
+  border-color: var(--color-danger);
+}
+.button.is-danger:hover { background-color: var(--color-danger-dark); }
+.button.is-danger:active { background-color: var(--color-danger-darker); }
+
+.button.is-muted {
+  border-color: var(--color-muted);
+}
+.button:hover,
+.button.is-muted:hover {
+  background-color: var(--color-muted-dark);
+}
+
+/* --- Layout --- */
+.app-container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+.grid-layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+/* --- Component-specific Styles --- */
+.login-card {
+  max-width: 24rem;
+  margin: 2.5rem auto 0;
+}
+
+/* --- Typography & Utilities --- */
+.text-danger { color: var(--color-danger-text); }
+.text-success { color: var(--color-success-text); }
+.text-sm { font-size: 0.875rem; }
+.font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+
+.placeholder-container {
+  text-align: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* --- Spacing & Misc Utilities --- */
+.full-width { width: 100%; }
+
+/* --- Media Queries --- */
+/* Larger screens */
+@media (min-width: 85em) {
+  :root {
+    --font-size-body: 1.7rem;
+    --font-size-button: 1.5rem;
+    --font-size-input: 1.3rem;
+  }
+  .app-container {
+    max-width: 2200px; /* Allow content to be wider on large screens */
+  }
+  .grid-layout { grid-template-columns: auto 1fr; }
+}
+
+/* Smaller tablets and mobiles */
+@media (max-width: 56.25em) {
+  :root {
+    --font-size-body: 1.2rem; 
+    --font-size-button: 1.0rem;
+    --font-size-input: 1.0rem;
+    --inset-body-before: 5%;
+  }
+}
+
+.font-bold { font-weight: bold; }
+.text-muted { color: var(--color-muted); }
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

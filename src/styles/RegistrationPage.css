@@ -1,0 +1,14 @@
+/* --- Component-specific Styles for RegistrationPage --- */
+
+.registration-card {
+  max-width: 40rem;
+  margin: 2.5rem auto 0;
+}
+
+/* Utility styles scoped to this component */
+.registration-card .mb-6 {
+  margin-bottom: 1.5rem; /* 24px */
+}
+.registration-card .message-text {
+  margin-top: 1rem;
+}

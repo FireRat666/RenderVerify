@@ -1,0 +1,6 @@
+/* --- Component-specific Styles for App.js --- */
+
+.welcome-message {
+  text-align: center;
+  margin-top: 2.5rem;
+}

@@ -1,0 +1,47 @@
+
+CREATE TABLE events (
+    id VARCHAR(255) PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    description TEXT,
+    owner_id INTEGER REFERENCES admins(id),
+    created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+CREATE TABLE codes (
+    id SERIAL PRIMARY KEY,
+    event_id VARCHAR(255) REFERENCES events(id) ON DELETE CASCADE,
+    code VARCHAR(255) NOT NULL,
+    used_by VARCHAR(255),
+    used_at TIMESTAMPTZ,
+    UNIQUE (event_id, code)
+);
+
+CREATE TABLE registrations (
+    id SERIAL PRIMARY KEY,
+    user_id VARCHAR(255) NOT NULL,
+    event_id VARCHAR(255) REFERENCES events(id) ON DELETE CASCADE,
+    registered_at TIMESTAMPTZ DEFAULT NOW(),
+    UNIQUE (user_id, event_id)
+);
+
+CREATE TABLE admins (
+    id SERIAL PRIMARY KEY,
+    username VARCHAR(255) UNIQUE NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    role VARCHAR(50) NOT NULL DEFAULT 'admin', -- 'admin' or 'superadmin'
+    created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+
+CREATE TABLE users (
+    id VARCHAR(255) PRIMARY KEY,
+    username VARCHAR(255),
+    created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+ALTER TABLE users ADD COLUMN username VARCHAR(255);
+ALTER TABLE events ADD COLUMN owner_id INTEGER REFERENCES admins(id);
+
+INSERT INTO admins (username, password_hash, role) 
+VALUES ('superadmin', 'PASSWORD_HASH_HERE', 'superadmin');
+

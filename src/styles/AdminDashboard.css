@@ -1,0 +1,72 @@
+/* --- Component-specific Styles for Admin Dashboard --- */
+.dashboard-card { padding: 1.5rem; border-radius: 0.5rem; }
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.section-header {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-muted-dark);
+  padding-bottom: 0.5rem;
+}
+
+.event-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.event-list-item {
+  padding: 0.75rem;
+  border: 1px solid;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+}
+.event-list-item:active {
+  background-color: transparent !important; /* Override hover */
+  transform: translateY(0.25rem); /* 4px */
+}
+.event-list-item.is-primary {
+  border-color: var(--color-primary);
+}
+.event-list-item.is-primary:hover {
+  background-color: var(--color-primary-dark);
+}
+.event-list-item.is-muted {
+  border-color: var(--color-muted);
+}
+.event-list-item.is-muted:hover {
+  background-color: var(--color-muted-dark);
+}
+
+.dashboard-left-column {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.dashboard-footer {
+  margin-top: 2rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+/*
+ * On larger screens (matching the breakpoint in index.css),
+ * we apply a max-width to the left column to control the grid layout.
+*/
+@media (min-width: 85em) {
+  .dashboard-left-column {
+    /* By setting a max-width, you constrain the first column. */
+    max-width: 500px; /* Adjust this value to your preference */
+    width: 100%;
+  }
+}

@@ -1,0 +1,23 @@
+/* --- Shared Styles for Admin Form Pages --- */
+
+.admin-form-card {
+  max-width: 28rem;
+  margin: 2.5rem auto 0;
+}
+
+.admin-form-card form {
+  /* A bit more spacing for these larger forms */
+  gap: 1.25rem;
+}
+
+.admin-form-card .message-feedback {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.admin-form-card .form-footer {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-muted);
+  text-align: center;
+}

@@ -1,0 +1,181 @@
+/* --- Component-specific Styles for ManageEventPanel --- */
+.manage-event-panel header {
+  display: flex;
+  flex-direction: column;
+}
+.manage-event-panel header > .button.is-danger {
+  align-self: flex-end;
+  margin-top: 1rem;
+}
+.manage-event-panel h4 {
+  margin-bottom: 1rem;
+}
+.manage-event-panel hr {
+  margin: 1.5rem 0;
+  border-color: var(--color-muted);
+  border-style: solid;
+  border-width: 1px 0 0 0;
+}
+.manage-event-panel .add-codes-form {
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--color-muted);
+}
+.manage-event-panel .panel-message {
+  margin-top: 0.75rem;
+  text-align: center;
+}
+.manage-event-panel .event-id {
+  font-family: monospace;
+  margin-bottom: 0.5rem;
+}
+.manage-event-panel .codes-header {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically align heading, input, and button */
+  gap: 1rem; /* Add space between the elements */
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  margin-bottom: 0.5rem; /* Keep a small margin to the controls below */
+}
+.manage-event-panel .codes-header h4 {
+  margin: 0; /* Remove default margin from heading to align better */
+  white-space: nowrap; /* Prevent the title from wrapping */
+}
+
+/* --- Scrollable Container for the Table --- */
+.manage-event-panel .codes-table-container {
+  height: 24rem; /* You can adjust this height */
+  overflow-y: auto;
+  border: 1px solid var(--color-muted);
+  border-radius: 0.5rem;
+  position: relative; /* Required for the sticky header */
+  margin-top: 1rem;
+}
+
+/* --- Table for Codes --- */
+.manage-event-panel .codes-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9em; /* Slightly smaller to fit more info */
+}
+
+.manage-event-panel .codes-table th,
+.manage-event-panel .codes-table td {
+  padding: 0.6rem 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid var(--color-muted-dark);
+  vertical-align: middle;
+}
+
+.manage-event-panel .codes-table th {
+  position: sticky;
+  top: 0;
+  background-color: var(--background-overlay-darker); /* Prevents content from showing through on scroll */
+  z-index: 1;
+}
+
+.manage-event-panel .codes-table th button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  color: inherit;
+  font-weight: bold;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.manage-event-panel .codes-table th button:hover {
+  color: var(--color-primary);
+}
+
+.manage-event-panel .codes-table .col-select {
+  width: 40px;
+  text-align: center;
+}
+
+.manage-event-panel .codes-table .col-code {
+  font-family: var(--font-mono);
+}
+
+.manage-event-panel .codes-table .col-username,
+.manage-event-panel .codes-table .col-userid,
+.manage-event-panel .codes-table .col-usedat {
+  font-size: 0.8em;
+  color: var(--color-warning-text);
+}
+
+.manage-event-panel .codes-table tr.is-used {
+  background-color: var(--color-warning-bg);
+  color: var(--color-warning-text);
+}
+
+.manage-event-panel .codes-table tr.is-used .col-code {
+  text-decoration: line-through;
+}
+
+.manage-event-panel .codes-table tr.is-unused {
+  background-color: var(--color-code-unused-bg);
+}
+
+.filter-controls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  gap: 1.5rem;
+}
+
+.filter-controls .page-size-selector select {
+  padding: 0.5rem 0.75rem;
+  border: var(--border-primary);
+  border-radius: var(--border-radius-base);
+  background-color: var(--background-overlay-darker);
+  color: var(--color-text);
+  font-size: 0.9rem;
+}
+
+.filter-controls .page-size-selector select:focus {
+  border: var(--border-focus);
+  outline: none;
+}
+
+.filter-input {
+  border: var(--border-primary);
+  border-radius: var(--border-radius-base);
+  background-color: var(--background-overlay-darker);
+  color: var(--color-text);
+
+  /* Sizing and layout */
+  flex-grow: 1;
+  max-width: 500px; /* Prevent it from becoming too wide */
+  font-size: var(--font-size-input);
+  padding: 0.25rem 0.5rem;
+}
+
+.filter-input:focus {
+  border: var(--border-focus);
+  outline: none;
+}
+
+.page-size-selector {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.select-all-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}

@@ -1,0 +1,8 @@
+/* --- Component-specific Styles for CreateEventForm --- */
+
+/* This component uses .dashboard-card from AdminDashboard.css for its container */
+
+.create-event-message {
+  margin-top: 1rem;
+  text-align: center;
+}
