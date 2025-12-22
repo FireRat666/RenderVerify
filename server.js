@@ -10,6 +10,10 @@ const rateLimit = require('express-rate-limit');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+// Trust the first proxy layer (e.g., from Render) to get the correct client IP.
+// This is crucial for express-rate-limit to function accurately.
+app.set('trust proxy', 1);
+
 // --- Middleware ---
 // Set security-related HTTP response headers
 app.use(
