@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Card, Title } from './UI';
+import { Card, Title } from './UI.jsx';
 
 export default function LoginForm({ onLogin, status, error }) {
   const [username, setUsername] = useState('');

@@ -1,13 +1,13 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router';
 import { Helmet } from 'react-helmet-async';
 import './styles/App.css';
 
 // Import pages
-import AdminDashboard from './pages/AdminDashboard';
-import RegistrationPage from './pages/RegistrationPage';
-import AdminUserManagementPage from './pages/AdminUserManagementPage';
-import ChangePasswordPage from './pages/ChangePasswordPage';
+import AdminDashboard from './pages/AdminDashboard.jsx';
+import RegistrationPage from './pages/RegistrationPage.jsx';
+import AdminUserManagementPage from './pages/AdminUserManagementPage.jsx';
+import ChangePasswordPage from './pages/ChangePasswordPage.jsx';
 
 export default function App() {
 

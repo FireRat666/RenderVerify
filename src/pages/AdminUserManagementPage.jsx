@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { Card, Title } from '../components/UI';
+import { Link, useNavigate } from 'react-router';
+import { Card, Title } from '../components/UI.jsx';
 import '../styles/AdminForms.css';
 
 export default function AdminUserManagementPage() {

@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Link } from 'react-router-dom';
-import ManageEventPanel from '../components/ManageEventPanel';
-import LoginForm from '../components/LoginForm';
-import CreateEventForm from '../components/CreateEventForm';
+import { Link } from 'react-router';
+import ManageEventPanel from '../components/ManageEventPanel.jsx';
+import LoginForm from '../components/LoginForm.jsx';
+import CreateEventForm from '../components/CreateEventForm.jsx';
 import '../styles/AdminDashboard.css';
 
 export default function AdminDashboard() {

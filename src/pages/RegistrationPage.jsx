@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { Card, Title } from '../components/UI';
+import { useParams } from 'react-router';
+import { Card, Title } from '../components/UI.jsx';
 import '../styles/RegistrationPage.css';
 
 export default function RegistrationPage() {
